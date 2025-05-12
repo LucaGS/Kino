@@ -2,7 +2,7 @@ package KinoKonsole;
 
 import KinoKonsole.Database;
 import KinoKonsole.Modells.User;
-
+import KinoKonsole.Services.UserService;
 import java.sql.Connection;
 import java.util.Scanner;
 
@@ -20,11 +20,9 @@ public class App {
             return;
         }
         Scanner scanner = new Scanner(System.in);
-        User user = new User(connection, scanner);
-
-        // Schließen Sie die Verbindung
+        UserService userService = new UserService(connection, scanner);
+        userService.HandleUser();
         database.close();
-
-        System.out.println("Hello World!");
+        scanner.close();
     }
 }

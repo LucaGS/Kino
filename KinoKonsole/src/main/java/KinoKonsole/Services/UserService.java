@@ -16,7 +16,7 @@ public class UserService {
         this.userRepository = new UserRepository(connection);
     }
 
-    public void HandleUser() {
+    public User HandleUser() {
         int choice = 0;
         System.out.println("UserService gestartet.");
         System.out.println("[1] Login.");
@@ -60,7 +60,7 @@ public class UserService {
         System.out.print("Passwort: ");
         String password = scanner.next();
         System.out.print("Admin (true/false): ");
-        boolean isAdmin = scanner.nextBoolean();
+        boolean isAdmin = false;
         User user = new User(name, password, isAdmin);
         if (userRepository.registerUser(user)) {
             System.out.println("Registrierung erfolgreich.");
