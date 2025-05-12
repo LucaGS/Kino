@@ -13,38 +13,10 @@ public class User {
     private Connection connection;
     private Scanner scanner;
 
-    public User(Connection connection, Scanner scanner) {
-        this.connection = connection;
-        this.scanner = scanner;
-
-        System.out.println("Willkommen im Kino!");
-        System.out.println("Möchten Sie sich anmelden oder registrieren?");
-        System.out.println("1. Anmelden");
-        System.out.println("2. Registrieren");
-        System.out.println("3. Abbrechen");
-
-        int choice = scanner.nextInt();
-        scanner.nextLine(); // Konsumiere das '\n'
-
-        switch (choice) {
-            case 1:
-                if (Login()) {
-                    System.out.println("Willkommen zurück, " + name + "!");
-                }
-                break;
-            case 2:
-                if (Register()) {
-                    System.out.println("Willkommen, " + name + "!");
-                }
-                break;
-            case 3:
-                System.out.println("Abgebrochen.");
-                break;
-            default:
-                System.out.println("Ungültige Auswahl.");
-        }
-
-        PrintUser();
+    public User(String name, String password, boolean isAdmin) {
+        this.name = name;
+        this.password = password;
+        this.isAdmin = isAdmin;+
     }
 
     public String getName() {
