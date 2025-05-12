@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1dda4a0d-c8a4-4b16-bc28-823cc42be379" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/KinoKonsole/src/main/java/KinoKonsole/Repositorys/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/KinoKonsole/src/main/java/KinoKonsole/Repositorys/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KinoKonsole/src/main/java/KinoKonsole/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/KinoKonsole/src/main/java/KinoKonsole/Services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KinoKonsole/target/KinoKonsole-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KinoKonsole/target/classes/KinoKonsole/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/KinoKonsole/target/classes/KinoKonsole/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KinoKonsole/target/classes/KinoKonsole/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/KinoKonsole/target/classes/KinoKonsole/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KinoKonsole/target/classes/KinoKonsole/Modells/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/KinoKonsole/target/classes/KinoKonsole/Modells/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KinoKonsole/target/classes/KinoKonsole/Repositorys/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/KinoKonsole/target/classes/KinoKonsole/Repositorys/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KinoKonsole/target/classes/KinoKonsole/Services/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KinoKonsole/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KinoKonsole/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/KinoKonsole/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KinoKonsole/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/KinoKonsole/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KinoKonsole/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KinoKonsole/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KinoKonsole/target/surefire-reports/KinoKonsole.AppTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KinoKonsole/target/surefire-reports/TEST-KinoKonsole.AppTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KinoKonsole/target/test-classes/KinoKonsole/AppTest.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2x0Fkmk1iNONkgG7VdwJnzRmxb0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/dev/Kino"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1dda4a0d-c8a4-4b16-bc28-823cc42be379" name="Changes" comment="" />
+      <created>1747067230040</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1747067230040</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -1,5 +1,4 @@
 package KinoKonsole.Services;
-
 import java.util.Scanner;
 import java.sql.Connection;
 import KinoKonsole.Modells.User;
@@ -9,15 +8,16 @@ public class UserService {
     private Connection connection;
     private Scanner scanner;
     private UserRepository userRepository;
-
+    private User user;
     public UserService(Connection connection, Scanner scanner) {
         this.connection = connection;
         this.scanner = scanner;
-        this.userRepository = new UserRepository(connection);
+        this.userRepository = new UserRepository(this.connection);
     }
 
     public User HandleUser() {
         int choice = 0;
+        while(this.user == null){
         System.out.println("UserService gestartet.");
         System.out.println("[1] Login.");
         System.out.println("[2] Register.");
@@ -32,11 +32,12 @@ public class UserService {
                 break;
             case 3:
                 System.out.println("Abgebrochen.");
-                break;
+                return null;
             default:
                 System.out.println("Ungültige Auswahl.");
         }
-
+        }
+        return this.user;
     }
 
     public void Login() {
@@ -45,11 +46,12 @@ public class UserService {
         String name = scanner.next();
         System.out.print("Passwort: ");
         String password = scanner.next();
-        this.userRepository.authenticateUser(name, password);
-        if (userRepository.authenticateUser(name, password)) {
+        this.user = this.userRepository.authenticateUser(name, password);
+        if (userRepository.authenticateUser(name, password) != null) {
             System.out.println("Login erfolgreich.");
         } else {
             System.out.println("Login fehlgeschlagen. Überprüfen Sie Ihren Benutzernamen und Ihr Passwort.");
+            return ;
         }
     }
 
@@ -61,9 +63,10 @@ public class UserService {
         String password = scanner.next();
         System.out.print("Admin (true/false): ");
         boolean isAdmin = false;
-        User user = new User(name, password, isAdmin);
-        if (userRepository.registerUser(user)) {
+        this.user = userRepository.registerUser(name, password, isAdmin);
+        if (this.user != null) {
             System.out.println("Registrierung erfolgreich.");
+           
         } else {
             System.out.println("Registrierung fehlgeschlagen. Überprüfen Sie Ihre Eingaben.");
         }

@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class User {
+    private int id;
     private String name;
     private String password;
     private boolean isAdmin;
@@ -16,7 +17,13 @@ public class User {
         this.password = password;
         this.isAdmin = isAdmin;
     }
+    public int getId(){
+        return this.id;
 
+    }
+    public void setId(int id){
+        this.id = id;
+    }
     public String getName() {
         return name;
     }
