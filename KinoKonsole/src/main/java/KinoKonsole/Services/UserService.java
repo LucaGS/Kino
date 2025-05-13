@@ -1,4 +1,5 @@
 package KinoKonsole.Services;
+
 import java.util.Scanner;
 import java.sql.Connection;
 import KinoKonsole.Modells.User;
@@ -9,6 +10,7 @@ public class UserService {
     private Scanner scanner;
     private UserRepository userRepository;
     private User user;
+
     public UserService(Connection connection, Scanner scanner) {
         this.connection = connection;
         this.scanner = scanner;
@@ -17,25 +19,25 @@ public class UserService {
 
     public User HandleUser() {
         int choice = 0;
-        while(this.user == null){
-        System.out.println("UserService gestartet.");
-        System.out.println("[1] Login.");
-        System.out.println("[2] Register.");
-        System.out.println("[3] Abbrechen.");
-        choice = scanner.nextInt();
-        switch (choice) {
-            case 1:
-                Login();
-                break;
-            case 2:
-                Register();
-                break;
-            case 3:
-                System.out.println("Abgebrochen.");
-                return null;
-            default:
-                System.out.println("Ungültige Auswahl.");
-        }
+        while (this.user == null) {
+            System.out.println("UserService gestartet.");
+            System.out.println("[1] Login.");
+            System.out.println("[2] Register.");
+            System.out.println("[3] Abbrechen.");
+            choice = scanner.nextInt();
+            switch (choice) {
+                case 1:
+                    Login();
+                    break;
+                case 2:
+                    Register();
+                    break;
+                case 3:
+                    System.out.println("Abgebrochen.");
+                    return null;
+                default:
+                    System.out.println("Ungültige Auswahl.");
+            }
         }
         return this.user;
     }
@@ -51,7 +53,7 @@ public class UserService {
             System.out.println("Login erfolgreich.");
         } else {
             System.out.println("Login fehlgeschlagen. Überprüfen Sie Ihren Benutzernamen und Ihr Passwort.");
-            return ;
+            return;
         }
     }
 
@@ -66,7 +68,7 @@ public class UserService {
         this.user = userRepository.registerUser(name, password, isAdmin);
         if (this.user != null) {
             System.out.println("Registrierung erfolgreich.");
-           
+
         } else {
             System.out.println("Registrierung fehlgeschlagen. Überprüfen Sie Ihre Eingaben.");
         }

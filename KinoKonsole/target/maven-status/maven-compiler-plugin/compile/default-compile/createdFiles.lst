@@ -1,5 +1,4 @@
 KinoKonsole\App.class
 KinoKonsole\Modells\User.class
-KinoKonsole\Repositorys\UserRepository.class
-KinoKonsole\Services\UserService.class
+KinoKonsole\Modells\Movie.class
 KinoKonsole\Database.class
