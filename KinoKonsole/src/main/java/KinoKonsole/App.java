@@ -1,9 +1,12 @@
 package KinoKonsole;
 
 import KinoKonsole.Database;
+import KinoKonsole.Modells.MovieScreening;
 import KinoKonsole.Modells.User;
+import KinoKonsole.Repositorys.MovieScreeningRepository;
 import KinoKonsole.Services.UserService;
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
@@ -19,6 +22,11 @@ public class App {
         UserService userService = new UserService(connection, scanner);
         User user = userService.HandleUser();
         user.PrintUser();
+        MovieScreeningRepository movieScreeningRepository = new MovieScreeningRepository(connection);
+        ArrayList<MovieScreening> movieScreenings = movieScreeningRepository.GetAllMovieScreenings();
+        for (MovieScreening movieScreening : movieScreenings) {
+            movieScreening.PrintMovieScreening();
+        }
         database.close();
         scanner.close();
     }
