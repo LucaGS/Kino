@@ -7,12 +7,12 @@ public class MovieScreening {
     private Movie movie;
     private int movieId;
     private LocalDateTime screeningTime;
-    private int cinema_hall;
+    private CinemaHall cinemaHall;
 
-    public MovieScreening(int id, int movieId, LocalDateTime screeningTime, int cinema_hall) {
+    public MovieScreening(int id, int movieId, LocalDateTime screeningTime, CinemaHall cinemaHall) {
         this.movieId = movieId;
         this.screeningTime = screeningTime;
-        this.cinema_hall = cinema_hall;
+        this.cinemaHall = cinemaHall;
     }
 
     public Movie getMovie() {
@@ -23,10 +23,10 @@ public class MovieScreening {
         this.movie = movie;
     }
 
-    public MovieScreening(int movieId, LocalDateTime screeningTime, int cinema_hall) {
+    public MovieScreening(int movieId, LocalDateTime screeningTime, CinemaHall cinemaHall) {
         this.movieId = movieId;
         this.screeningTime = screeningTime;
-        this.cinema_hall = cinema_hall;
+        this.cinemaHall = cinemaHall;
     }
 
     public int getId() {
@@ -53,19 +53,20 @@ public class MovieScreening {
         this.screeningTime = screeningTime;
     }
 
-    public int getCinema_hall() {
-        return cinema_hall;
+    public CinemaHall getCinema_hall() {
+        return cinemaHall;
     }
 
-    public void setCinema_hall(int cinema_hall) {
-        this.cinema_hall = cinema_hall;
+    public void setCinema_hall(CinemaHall cinemaHall) {
+        this.cinemaHall = cinemaHall;
 
     }
 
     public void PrintMovieScreening() {
-        System.out.println("MovieId: " + movieId);
+        System.out.println("ScreeningId: "+ id);
+        //System.out.println("MovieId: " + movieId);
         System.out.println("ScreeningTime: " + screeningTime);
-        System.out.println("CinemaHall: " + cinema_hall);
+        System.out.println("CinemaHall: " + cinemaHall);
         this.movie.PrintMovie();
         System.out.println("--------------------------------------------------");
     }

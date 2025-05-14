@@ -1,4 +1,10 @@
+KinoKonsole\Modells\Genre.class
+KinoKonsole\Repositorys\MovieScreeningRepository.class
+KinoKonsole\Modells\MovieScreening.class
+KinoKonsole\Repositorys\MovieRepository.class
 KinoKonsole\App.class
 KinoKonsole\Modells\User.class
+KinoKonsole\Repositorys\UserRepository.class
+KinoKonsole\Services\UserService.class
 KinoKonsole\Modells\Movie.class
 KinoKonsole\Database.class
