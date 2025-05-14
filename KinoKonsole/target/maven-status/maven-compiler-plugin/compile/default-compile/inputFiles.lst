@@ -1,8 +1,10 @@
 C:\dev\Kino\KinoKonsole\src\main\java\KinoKonsole\App.java
 C:\dev\Kino\KinoKonsole\src\main\java\KinoKonsole\Database.java
+C:\dev\Kino\KinoKonsole\src\main\java\KinoKonsole\Modells\CinemaHall.java
 C:\dev\Kino\KinoKonsole\src\main\java\KinoKonsole\Modells\Genre.java
 C:\dev\Kino\KinoKonsole\src\main\java\KinoKonsole\Modells\Movie.java
 C:\dev\Kino\KinoKonsole\src\main\java\KinoKonsole\Modells\MovieScreening.java
+C:\dev\Kino\KinoKonsole\src\main\java\KinoKonsole\Modells\Seat.java
 C:\dev\Kino\KinoKonsole\src\main\java\KinoKonsole\Modells\User.java
 C:\dev\Kino\KinoKonsole\src\main\java\KinoKonsole\Repositorys\MovieRepository.java
 C:\dev\Kino\KinoKonsole\src\main\java\KinoKonsole\Repositorys\MovieScreeningRepository.java

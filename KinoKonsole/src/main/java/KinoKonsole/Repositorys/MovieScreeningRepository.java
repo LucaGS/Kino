@@ -1,5 +1,6 @@
 package KinoKonsole.Repositorys;
 
+import KinoKonsole.Modells.CinemaHall;
 import KinoKonsole.Modells.Genre;
 import KinoKonsole.Modells.Movie;
 import KinoKonsole.Modells.MovieScreening;
@@ -19,20 +20,39 @@ public class MovieScreeningRepository {
 
     public ArrayList<MovieScreening> GetAllMovieScreenings() {
         ArrayList<MovieScreening> movieScreenings = new ArrayList<MovieScreening>();
-        String sql = "SELECT movie_screenings.id, movie_screenings.screening_time, movie_screenings.cinema_hall, \r\n" + //
-                "   movies.id as MovieId, movies.name As MovieName, movies.description As MovieDescription , Genres.id As GenreId , Genres.name as Genre, Genres.description as GenreDescription FROM movie_screenings\r\n"
-                + //
-                "      JOIN movies ON movie_screenings.movie_id = movies.id\r\n" + //
-                "\t\t JOIN Genres ON Genres.id = Movies.genreid;";
+        String sql = "SELECT \r\n" + //
+                "    movie_screenings.id AS screeningId,\r\n" + //
+                "    movie_screenings.screening_time,\r\n" + //
+                "\r\n" + //
+                "    Movies.id AS movieId,\r\n" + //
+                "    Movies.name AS movieName,\r\n" + //
+                "    Movies.description AS movieDescription,\r\n" + //
+                "\r\n" + //
+                "    Genres.id AS genreId,\r\n" + //
+                "    Genres.name AS genreName,\r\n" + //
+                "    Genres.description AS genreDescription,\r\n" + //
+                "\r\n" + //
+                "    cinema_hall.id AS hallId,\r\n" + //
+                "    cinema_hall.name AS hallName,\r\n" + //
+                "    cinema_hall.rows,\r\n" + //
+                "    cinema_hall.numbers\r\n" + //
+                "\r\n" + //
+                "FROM movie_screenings\r\n" + //
+                "JOIN Movies ON Movies.id = movie_screenings.movie_id\r\n" + //
+                "JOIN Genres ON Movies.genreid = Genres.id\r\n" + //
+                "JOIN cinema_hall ON cinema_hall.id = movie_screenings.cinema_hall_id;\r\n" + //
+                "";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
-                Genre genre = new Genre(rs.getInt("GenreId"), rs.getString("Genre"), rs.getString("GenreDescription"));
-                Movie movie = new Movie(rs.getInt("MovieId"), rs.getString("MovieName"),
-                        rs.getString("MovieDescription"), genre);
-                movie.setId(rs.getInt("MovieId"));
-                MovieScreening movieScreening = new MovieScreening(rs.getInt("id"), rs.getInt("MovieId"),
-                        rs.getObject("screening_time", LocalDateTime.class), rs.getInt("cinema_hall"));
+                Genre genre = new Genre(rs.getInt("genreId"), rs.getString("genreName"),
+                        rs.getString("genreDescription"));
+                Movie movie = new Movie(rs.getInt("movieId"), rs.getString("movieName"),
+                        rs.getString("movieDescription"), genre);
+                CinemaHall cinemaHall = new CinemaHall(rs.getInt("hallId"), rs.getString("hallName"),
+                        rs.getInt("rows"), rs.getInt("numbers"));
+                MovieScreening movieScreening = new MovieScreening(rs.getInt("screeningId"), movie,
+                        rs.getObject("screening_time", LocalDateTime.class), cinemaHall);
                 movieScreening.setMovie(movie);
                 movieScreenings.add(movieScreening);
             }

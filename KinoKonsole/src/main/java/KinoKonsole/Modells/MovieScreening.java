@@ -9,8 +9,9 @@ public class MovieScreening {
     private LocalDateTime screeningTime;
     private CinemaHall cinemaHall;
 
-    public MovieScreening(int id, int movieId, LocalDateTime screeningTime, CinemaHall cinemaHall) {
-        this.movieId = movieId;
+    public MovieScreening(int id, Movie movie, LocalDateTime screeningTime, CinemaHall cinemaHall) {
+        this.id = id;
+        this.movie = movie;
         this.screeningTime = screeningTime;
         this.cinemaHall = cinemaHall;
     }
@@ -63,8 +64,8 @@ public class MovieScreening {
     }
 
     public void PrintMovieScreening() {
-        System.out.println("ScreeningId: "+ id);
-        //System.out.println("MovieId: " + movieId);
+        System.out.println("ScreeningId: " + id);
+        // System.out.println("MovieId: " + movieId);
         System.out.println("ScreeningTime: " + screeningTime);
         System.out.println("CinemaHall: " + cinemaHall);
         this.movie.PrintMovie();
