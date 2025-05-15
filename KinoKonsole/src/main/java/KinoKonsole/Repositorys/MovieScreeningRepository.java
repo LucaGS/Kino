@@ -51,15 +51,15 @@ public class MovieScreeningRepository {
                         rs.getString("movieDescription"), genre);
                 CinemaHall cinemaHall = new CinemaHall(rs.getInt("hallId"), rs.getString("hallName"),
                         rs.getInt("rows"), rs.getInt("numbers"));
+                System.out.println("Cinema Hall: ");
                 MovieScreening movieScreening = new MovieScreening(rs.getInt("screeningId"), movie,
                         rs.getObject("screening_time", LocalDateTime.class), cinemaHall);
-                movieScreening.setMovie(movie);
                 movieScreenings.add(movieScreening);
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
+            throw new RuntimeException("Datenbankfehler in GetAllMovieScreenings()", e);
+
         }
         return movieScreenings;
 

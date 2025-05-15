@@ -3,11 +3,13 @@ package KinoKonsole;
 import KinoKonsole.Database;
 import KinoKonsole.Modells.MovieScreening;
 import KinoKonsole.Modells.User;
+import KinoKonsole.Repositorys.BookingRepositry;
 import KinoKonsole.Repositorys.MovieScreeningRepository;
 import KinoKonsole.Services.UserService;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Scanner;
+import KinoKonsole.Services.BookingService;
 
 public class App {
     public static void main(String[] args) {
@@ -24,9 +26,14 @@ public class App {
         user.PrintUser();
         MovieScreeningRepository movieScreeningRepository = new MovieScreeningRepository(connection);
         ArrayList<MovieScreening> movieScreenings = movieScreeningRepository.GetAllMovieScreenings();
-        for (MovieScreening movieScreening : movieScreenings) {
-            movieScreening.PrintMovieScreening();
+        if (movieScreenings == null) {
+            System.err.println("Fehler beim Abrufen der Filmvorführungen.");
+            return;
         }
+        BookingRepositry bookingRepositry = new BookingRepositry(connection);
+        BookingService bookingService = new BookingService(user, movieScreeningRepository, scanner, bookingRepositry);
+        bookingService.bookSeat();
+        System.out.println("Buchung erfolgreich.");
         database.close();
         scanner.close();
     }

@@ -11,6 +11,7 @@ public class CinemaHall {
     // Fills seats with row like A and number like 1 starting from A , 1
     public CinemaHall(int id, String name, int rows, int numbers) {
         this.id = id;
+        this.name = name;
         this.rows = rows;
         this.numbers = numbers;
     }

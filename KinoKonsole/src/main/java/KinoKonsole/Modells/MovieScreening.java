@@ -54,8 +54,8 @@ public class MovieScreening {
         this.screeningTime = screeningTime;
     }
 
-    public CinemaHall getCinema_hall() {
-        return cinemaHall;
+    public CinemaHall getCinemaHall() {
+        return this.cinemaHall;
     }
 
     public void setCinema_hall(CinemaHall cinemaHall) {
@@ -65,9 +65,9 @@ public class MovieScreening {
 
     public void PrintMovieScreening() {
         System.out.println("ScreeningId: " + id);
-        // System.out.println("MovieId: " + movieId);
+        System.out.println("Movie: " + movie.getName());
         System.out.println("ScreeningTime: " + screeningTime);
-        System.out.println("CinemaHall: " + cinemaHall);
+        System.out.println("CinemaHall: " + cinemaHall.GetName());
         this.movie.PrintMovie();
         System.out.println("--------------------------------------------------");
     }
